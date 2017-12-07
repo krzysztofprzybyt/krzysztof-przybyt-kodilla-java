@@ -1,2 +1,4 @@
 include 'kodilla-testing'
+include 'user'
+include 'user'
 
