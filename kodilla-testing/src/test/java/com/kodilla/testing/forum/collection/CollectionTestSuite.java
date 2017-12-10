@@ -40,12 +40,17 @@ public class CollectionTestSuite {
         lista.add(3);
         lista.add(4);
         //When
+        ArrayList<Integer> lista2 = new ArrayList<Integer>();
+
+        lista2.add(2);
+        lista2.add(4);
+
         ArrayList<Integer> pairs;
         pairs =  new ArrayList<Integer>(OddNumbersExterminator.exterminate(lista));
         System.out.println("Test z danymi");
         //Then
-        Assert.assertEquals(lista.get(1), pairs.get(0));
-        Assert.assertEquals(lista.get(3), pairs.get(1));
+        Assert.assertEquals(lista2, pairs);
+        //Assert.assertEquals(lista.get(3), pairs.get(1));
 
 
 
