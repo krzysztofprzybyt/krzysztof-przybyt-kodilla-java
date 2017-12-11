@@ -27,7 +27,7 @@ public class CollectionTestSuite {
         pair =  new ArrayList<Integer>(OddNumbersExterminator.exterminate(lista));
         System.out.println("Test z pustą bazą");
         //Then
-        Assert.assertEquals(lista, pair);
+        Assert.assertEquals(lista.isEmpty(), pair.isEmpty());
 
     }
     @Test
