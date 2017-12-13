@@ -9,18 +9,29 @@ public class StatisticsCalc {
     private int userCount;
     private int postCount;
     private int commentsCount;
-    private double postOnUser;
-    private double commentsOnUser;
-    private double commentsOnPost;
+    private int postOnUser;
+    private int commentsOnUser;
+    private int commentsOnPost;
 
 
     public void calculateAdvStatistics(Statistics statistics){
         this.userCount = statistics.usersNames().size();
         this.postCount = statistics.postsCount();
         this.commentsCount = statistics.commentsCount();
-        this.postOnUser = (double)postCount/userCount;
-        this.commentsOnUser = (double)commentsCount/userCount;
-        this.commentsOnPost = (double)commentsCount/postCount;
+
+        if(userCount<=0) {
+            this.postOnUser=0;
+            this.commentsOnUser = 0;
+        } else {
+            this.postOnUser = postCount / userCount;
+            this.commentsOnUser = commentsCount/userCount;
+        }
+
+        if(postCount<=0){
+            this.commentsOnPost = 0;
+        } else this.commentsOnPost = commentsCount/postCount;
+
+
 
     }
     public void showStatistic(){
@@ -46,15 +57,15 @@ public class StatisticsCalc {
         return commentsCount;
     }
 
-    public double getPostOnUser() {
+    public int getPostOnUser() {
         return postOnUser;
     }
 
-    public double getCommentsOnUser() {
+    public int getCommentsOnUser() {
         return commentsOnUser;
     }
 
-    public double getCommentsOnPost() {
+    public int getCommentsOnPost() {
         return commentsOnPost;
     }
 }
