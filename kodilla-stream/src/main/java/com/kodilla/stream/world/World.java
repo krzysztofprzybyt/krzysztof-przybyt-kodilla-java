@@ -10,14 +10,11 @@ import java.util.Set;
 public class World {
 
     private final Set<Continent> allWorld = new HashSet<>();
-    //private final BigDecimal peopleQuantity = BigDecimal.ZERO;
-
 
     public void addWorld(final Continent continent){
         this.allWorld.add(continent);
 
     }
-
 
     public BigDecimal getPeopleQuantity() {
 

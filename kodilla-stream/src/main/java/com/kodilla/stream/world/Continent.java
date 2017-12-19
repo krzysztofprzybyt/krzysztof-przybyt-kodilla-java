@@ -4,14 +4,9 @@ import java.util.*;
 
 public class Continent {
 
-    private final String continent;
+
     private final Set<Country> countries = new HashSet<>();
 
-
-    public Continent(final String continent, final Country country) {
-        this.continent = continent;
-        this.countries.add(country);
-    }
 
     public Set<Country> getCountries() {
         return countries;
@@ -21,9 +16,6 @@ public class Continent {
         countries.add(country);
     }
 
-    public String getContinent() {
-        return continent;
-    }
 
     @Override
     public boolean equals(Object o) {
