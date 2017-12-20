@@ -7,16 +7,14 @@ import java.util.stream.IntStream;
 public interface ArrayOperations {
 
     static double getAverage(int[] numbers){
-        List<Integer> list = new ArrayList<>();
-        for (int i:numbers){
-            list.add(i);
-        }
-        IntStream.range(0, list.size())
-                .map(n -> list.get(n))
+        int[] list = numbers;
+
+        IntStream.range(0, list.length)
+                .map(n -> list[n])
                 .forEach(System.out::println);
 
-        double average = IntStream.range(0, list.size())
-                .map(n -> list.get(n))
+        double average = IntStream.range(0, list.length)
+                .map(n -> list[n])
                 .average()
                 .getAsDouble();
 
