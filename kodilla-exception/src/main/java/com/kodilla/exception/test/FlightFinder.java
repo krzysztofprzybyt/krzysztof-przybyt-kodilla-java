@@ -4,23 +4,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FlightFinder {
+    Map<String, Boolean> arrivalPorts = new HashMap<>();
     public void findFilght(Flight flight) throws RouteNotFoundException{
-
-        Flight flight1 = new Flight("London", "Paris");
-        Flight flight2 = new Flight("London", "Washington");
-        Flight flight3 = new Flight("Berlin", "Tokyo");
-        Flight flight4 = new Flight("Rome", "Zagreb");
-
-        final Map<String, Boolean> flights= new HashMap<>();
-        flights.put(flight1.getArrivalAirport(), true);
-        flights.put(flight2.getArrivalAirport(), true);
-        flights.put(flight3.getArrivalAirport(), true);
-        flights.put(flight4.getArrivalAirport(), true);
-//        flights.put("Berlin", false);
-//        flights.put("Moscow", false);
-
-
-
+        arrivalPorts.put("London", true);
+        arrivalPorts.put("Washington", true);
+        arrivalPorts.put("Zagreb", true);
+        arrivalPorts.put("Tokyo", true);
+        //System.out.println(arrivalPorts.keySet());
+        if(arrivalPorts.get(flight.getArrivalAirport())!=null) {
+            System.out.println("Lot do "+flight.getArrivalAirport() + " jest możliwy");
+        } else throw new RouteNotFoundException();
+    }
+    public static void main (String args[]){
+        FlightFinder test = new FlightFinder();
+        try {
+            test.findFilght(new Flight("wa","London"));
+        } catch (RouteNotFoundException e) {
+            System.out.println("Lot niemożliwy, brak lotniska w miejscu docelowym");
+        }
 
     }
 
@@ -29,12 +30,6 @@ public class FlightFinder {
 
 
 
-    public static void main (String[] args){
-
-
-
-
-    }
 }
 
 
