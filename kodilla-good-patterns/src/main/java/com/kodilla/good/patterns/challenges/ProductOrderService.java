@@ -13,8 +13,11 @@ public class ProductOrderService {
         this.orderRepository = orderRepository;
     }
 
-    public OrderDto process(final OrderRequest orderRequest) {
-        boolean isBuy = orderService.order(orderRequest.getUser(), orderRequest.getItem());
+    public OrderDto process(final OrderRequest orderRequest)  {
+        boolean isBuy = false;
+
+            isBuy = orderService.order(orderRequest.getUser(), orderRequest.getItem());
+
 
         if(isBuy) {
             sendService.post(orderRequest.getUser());

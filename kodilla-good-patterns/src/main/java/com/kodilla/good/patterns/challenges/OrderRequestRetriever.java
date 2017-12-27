@@ -2,11 +2,13 @@ package com.kodilla.good.patterns.challenges;
 
 public class OrderRequestRetriever {
 
-    public OrderRequest retrieve(){
+    private User user;
+    private String item;
 
-        User user = new User("John", "Smith", "NY");
+    public OrderRequest retrieve(final User user, final String item){
 
-        String item = "Skarpetki";
+         this.user = user;
+         this.item = item;
 
         return new OrderRequest(user, item);
     }
