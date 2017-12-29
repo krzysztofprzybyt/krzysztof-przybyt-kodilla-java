@@ -3,6 +3,7 @@ package com.kodilla.rps;
 import java.util.Scanner;
 
 public class RpsRunner {
+    protected static Scanner scanner = new Scanner(System.in);
 
     public  void rps(){
         boolean end = false;
@@ -12,7 +13,6 @@ public class RpsRunner {
         int compMove;
         int userMove;
         int userChoise;
-        Scanner scanner = new Scanner(System.in);
 
         System.out.println("To jest gra:\nPapier - Kamień - Nożyce");
         System.out.println("Podaj swoje imię:");
@@ -43,7 +43,6 @@ public class RpsRunner {
             }else if(userChoise=='n'){
                 System.out.println("Czy na pewno zakończyć aktualną grę?   t/n");
                 if(scanner.next().charAt(0)=='t') {
-                    //scanner.close();
                     end = true;
                     rps();
                 }
@@ -123,16 +122,15 @@ public class RpsRunner {
         }
         return false;
     }
-    static boolean endOrReply(){
+    public static boolean endOrReply(){
         boolean end = true;
         System.out.println("Jeśli chcesz zagrać ponownie naciśnij klawisz - n." +
                 "\nAby zakończyć naciśnik klawisz - x");
-        Scanner scan = new Scanner(System.in);
-        char reply = scan.next().charAt(0);
-        //scan.close();
+        char reply = scanner.next().charAt(0);
 
         if(reply == 'x'){
             System.out.println("\nDziękuję za wspólną zabawę.\nDo zobaczenia!!!");
+            scanner.close();
             return end;
         } else if(reply == 'n') {
             RpsRunner rps = new RpsRunner();
