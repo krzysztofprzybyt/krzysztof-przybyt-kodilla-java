@@ -17,24 +17,12 @@ public class FlightsBase {
         flights.add(new Flight("POZNAŃ","KRAKÓW"));
         flights.add(new Flight("WARSZAWA","KRAKÓW"));
         flights.add(new Flight("WARSZAWA","ŁÓDŹ"));
+        flights.add(new Flight("WARSZAWA","ŁÓDŹ"));
+        flights.add(new Flight("WARSZAWA","ŁÓDŹ"));
+        flights.add(new Flight("WARSZAWA","ŁÓDŹ"));
     }
 
     public Set<Flight> getFlights() {
         return flights;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        FlightsBase that = (FlightsBase) o;
-
-        return flights != null ? flights.equals(that.flights) : that.flights == null;
-    }
-
-    @Override
-    public int hashCode() {
-        return flights != null ? flights.hashCode() : 0;
     }
 }

@@ -1,5 +1,10 @@
 package com.kodilla.good.patterns.food2door;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 public class RunThisMain {
 
     public static void main (String args[]) {
@@ -19,6 +24,8 @@ public class RunThisMain {
         boughtService2.orr("pork", 340);
         boughtService2.orr("potato", 130);
         boughtService2.orr("chicken", 230);
+
+
 
     }
 }
