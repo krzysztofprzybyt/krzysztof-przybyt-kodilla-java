@@ -5,18 +5,19 @@ import java.util.Map;
 
 public class ExtraFoodShop implements ProducentInterface {
     private static final String companyName = "ExtraFoodShop";
-
     public String getCompanyName() {
         return companyName;
     }
 
-    private static HashMap<String, Integer> theItems = new HashMap<>();
+    private HashMap<String, Integer> theItems = new HashMap<>();
 
-    static {theItems.put("apple", 100);
+    {
+        theItems.put("apple", 100);
         theItems.put("pear", 500);
     }
 
     public HashMap<String, Integer> items(){
         return theItems;
     }
+
 }

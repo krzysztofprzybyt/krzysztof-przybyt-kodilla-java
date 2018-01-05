@@ -8,15 +8,14 @@ public class GlutenFreeShop implements ProducentInterface {
         return companyName;
     }
 
-    private static HashMap<String, Integer> theItems = new HashMap<>();
+    private HashMap<String, Integer> theItems = new HashMap<>();
 
-    static {
+    {
         theItems.put("chicken", 300);
         theItems.put("pork", 500);
     }
 
     public HashMap<String, Integer> items(){
-
         return theItems;
     }
 }

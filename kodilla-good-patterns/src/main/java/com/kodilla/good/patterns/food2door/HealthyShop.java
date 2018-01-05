@@ -8,14 +8,14 @@ public class HealthyShop implements ProducentInterface {
         return companyName;
     }
 
-    private static HashMap<String, Integer> theItems = new HashMap<>();
+    private HashMap<String, Integer> theItems = new HashMap<>();
 
-    static {theItems.put("carrot", 1000);
+    {
+        theItems.put("carrot", 1000);
         theItems.put("potato", 1500);
     }
 
     public HashMap<String, Integer> items(){
-
         return theItems;
     }
 }
