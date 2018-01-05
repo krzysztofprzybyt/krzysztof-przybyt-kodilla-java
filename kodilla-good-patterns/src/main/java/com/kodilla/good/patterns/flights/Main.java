@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.Flights;
+package com.kodilla.good.patterns.flights;
 
 public class Main {
     public static void main(String[] args) {

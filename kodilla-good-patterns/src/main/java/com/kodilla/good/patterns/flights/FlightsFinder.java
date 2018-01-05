@@ -1,8 +1,7 @@
-package com.kodilla.good.patterns.Flights;
+package com.kodilla.good.patterns.flights;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class FlightsFinder {
     FlightsBase flightsBase = new FlightsBase();
