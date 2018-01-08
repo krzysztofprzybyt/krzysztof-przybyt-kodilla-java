@@ -17,14 +17,14 @@ public class BoardTestSuite {
         ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfig.class);
         Board board = context.getBean(Board.class);
         //When
-        String done = board.getDoneList().tasks.get(0);
-        String progress = board.getInProgressList().tasks.get(0);
-        String toDo = board.getToDoList().tasks.get(0);
-     //   System.out.println(toDo+" "+progress+" "+done);
+        boolean progress = board.getInProgressList().getTasks().isEmpty();
+        boolean toDo = board.getToDoList().getTasks().isEmpty();
+        boolean done = board.getDoneList().getTasks().isEmpty();
+        System.out.println(toDo+" "+progress+" "+done);
 
         //Then
-        Assert.assertEquals("to do", toDo);
-        Assert.assertEquals("in progress", progress);
-        Assert.assertEquals("done", done);
+        Assert.assertEquals(true, toDo);
+        Assert.assertEquals(true, progress);
+        Assert.assertEquals(true, done);
     }
 }
