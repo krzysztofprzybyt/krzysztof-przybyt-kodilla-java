@@ -1,10 +1,10 @@
 package com.kodilla.patterns.factory.tasks;
 
 public class ShoppingTask implements Task {
-    final String taskName;
-    final String whatToBuy;
-    double quantity;
-    boolean executed = false;
+    final private String taskName;
+    final private String whatToBuy;
+    final private double quantity;
+    private boolean executed = false;
 
     public ShoppingTask(String taskName, String whatToBuy, double quantity) {
         this.taskName = taskName;
