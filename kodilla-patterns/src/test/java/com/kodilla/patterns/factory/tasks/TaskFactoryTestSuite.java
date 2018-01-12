@@ -21,12 +21,14 @@ public class TaskFactoryTestSuite {
         //When
         Task shopping = tasks.DoTask("SHOPPING");
         boolean execute = shopping.isTaskExecuted();
-        System.out.println(shopping.getTaskName()+ " Task is executed: "+execute);
+        String taskName = shopping.getTaskName();
+        System.out.println(taskName+ " Task is executed: "+execute);
         shopping.executeTask();
         execute = shopping.isTaskExecuted();
-        System.out.println(shopping.getTaskName()+ "Task is executed: "+execute);
+        System.out.println(taskName+ "Task is executed: "+execute);
 
         Assert.assertEquals(true, execute);
+        Assert.assertEquals("Shopping", taskName);
     }
     @Test
     public void testFactoryPaintingTask(){
@@ -35,12 +37,14 @@ public class TaskFactoryTestSuite {
         //When
         Task painting = tasks.DoTask("PAINTING");
         boolean execute = painting.isTaskExecuted();
-        System.out.println(painting.getTaskName()+ " Task is executed: "+execute);
+        String taskName = painting.getTaskName();
+        System.out.println(taskName+ " Task is executed: "+execute);
         painting.executeTask();
         execute = painting.isTaskExecuted();
-        System.out.println(painting.getTaskName()+ "Task is executed: "+execute);
+        System.out.println(taskName+ "Task is executed: "+execute);
 
         Assert.assertEquals(true, execute);
+        Assert.assertEquals("Painting", taskName);
     }
     @Test
     public void testFactoryDrivingTask(){
@@ -49,11 +53,13 @@ public class TaskFactoryTestSuite {
         //When
         Task driving = tasks.DoTask("DRIVING");
         boolean execute = driving.isTaskExecuted();
-        System.out.println(driving.getTaskName()+ " Task is executed: "+execute);
+        String taskName = driving.getTaskName();
+        System.out.println(taskName+ " Task is executed: "+execute);
         driving.executeTask();
         execute = driving.isTaskExecuted();
-        System.out.println(driving.getTaskName()+ "Task is executed: "+execute);
+        System.out.println(taskName+ "Task is executed: "+execute);
 
         Assert.assertEquals(true, execute);
+        Assert.assertEquals("Driving", taskName);
     }
 }
