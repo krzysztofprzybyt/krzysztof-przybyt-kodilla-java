@@ -54,25 +54,36 @@ public class InvoiceDaoTestSuite {
 
         productDao.save(product);
         productDao.save(product2);
+        int productId1 = product.getId();
+        int productId2 = product2.getId();
 
         invoiceDao.save(invoice);
+        int invoiceId = invoice.getId();
 
         itemDao.save(item);
         itemDao.save(item2);
         itemDao.save(item3);
-
-
-
-
+        int itemId = item.getId();
+        int itemId2 = item2.getId();
+        int itemId3 = item3.getId();
 
         //When
-
+        int positions = invoice.getItems().size();
 
         //Then
-//        Assert.assertEquals();
+        Assert.assertEquals(3, positions);
 
         //CleanUp
-//        invoiceDao.delete(id);
+        try {
+            productDao.delete(productId1);
+            productDao.delete(productId2);
+            invoiceDao.delete(invoiceId);
+            itemDao.delete(itemId);
+            itemDao.delete(itemId2);
+            itemDao.delete(itemId3);
+        } catch (Exception e) {
+            //do nothing
+        }
 
     }
 }
