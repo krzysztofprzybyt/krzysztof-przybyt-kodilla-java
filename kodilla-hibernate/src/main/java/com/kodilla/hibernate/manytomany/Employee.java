@@ -4,11 +4,22 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+@NamedQueries({
+        @NamedQuery(
+                name = "Employee.retrieveEmployeesForName",
+                query = "FROM Employee WHERE lastname > :LASTNAME"
+        ),
+        @NamedQuery(
+                name = "Employee.retrieveEmployeesForNameLikes",
+                query = "FROM Employee WHERE lastname LIKE :LETTERS"
+        )
+})
+//@NamedNativeQuery(
+//        name = "Employee.retrieveEmployeesForNameLikes",
+//        query = "SELECT * FROM Employee WHERE lastname LIKE :LETTERS",
+//        resultClass = Employee.class
+//)
 
-@NamedQuery(
-        name = "Employee.retrieveEmployeesForName",
-        query = "FROM Employee WHERE lastname > :LASTNAME"
-)
 
 @Entity
 @Table(name = "EMPLOYEES")

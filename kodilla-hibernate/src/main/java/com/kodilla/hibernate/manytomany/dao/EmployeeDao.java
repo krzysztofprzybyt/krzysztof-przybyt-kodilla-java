@@ -11,4 +11,11 @@ public interface EmployeeDao extends CrudRepository<Employee, Integer> {
 
     @Query
     List<Employee> retrieveEmployeesForName(@Param("LASTNAME") String lastname);
+    @Query
+    List<Employee> retrieveEmployeesForNameLikes(@Param("LETTERS") String letters);
+
+    @Override
+    Employee save(Employee employee);
+    @Override
+    void deleteAll();
 }
