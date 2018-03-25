@@ -22,35 +22,31 @@ public class Facade {
 
     public List<Employee> findUserbyName(String name) throws ProcessingException{
 
-        List<Employee> employeeList = employeeDao.retrieveEmployeesForNameLikes("%"+name+"%");
+        List<Employee> employeeList = employeeDao.retrieveEmployeesForNameLikes(name);
         LOGGER.info("Finding Employee by: "+name);
 
-        if(employeeList.isEmpty()) {
+        if(employeeList==null) {
 
             LOGGER.error(ProcessingException.ERR_FIND_EMPLOYEE);
             throw new ProcessingException(ProcessingException.ERR_FIND_EMPLOYEE);
-        } else {
-
-            LOGGER.info("Finded Employees");
-            return employeeList;
         }
+        LOGGER.info("Finded Employees");
+        return employeeList;
+
     }
     public List<Company> findCompanybyName(String name) throws ProcessingException{
 
-        List<Company> companyList = companyDao.retrieveCompanyForSomeLetters("%"+name+"%");
+        List<Company> companyList = companyDao.retrieveCompanyForSomeLetters(name);
         LOGGER.info("Finding Companies by: "+name);
 
         if(companyList==null) {
 
             LOGGER.error(ProcessingException.ERR_FIND_COMPANY);
             throw new ProcessingException(ProcessingException.ERR_FIND_COMPANY);
-        } else {
-
-            LOGGER.info("Finded Companies");
-            return companyList;
-
         }
 
+        LOGGER.info("Finded Companies");
+        return companyList;
 
     }
 }

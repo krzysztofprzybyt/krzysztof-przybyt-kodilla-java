@@ -27,7 +27,7 @@ public class FacadeTestSuite {
 
 
     @Test
-    public void TestFindEmployee() throws ProcessingException {
+    public void testFindEmployee() throws ProcessingException {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -41,11 +41,11 @@ public class FacadeTestSuite {
         List<Employee> employeeList = facade.findUserbyName("sky");
 
         //Then
-        Assert.assertEquals(1,employeeList.size());
+        Assert.assertEquals(5,employeeList.size());
         employeeDao.deleteAll();
     }
     @Test
-    public void TestFindCompanies() throws ProcessingException {
+    public void testFindCompanies() throws ProcessingException {
         // Given
         Company softwareMachine = new Company("Software Machine");
         Company dataMaesters = new Company("Data Maesters");
