@@ -27,8 +27,9 @@ public class StudentQueue implements HomeworkObservable {
     }
     @Override
     public void notifyMentor() {
-        for(HomeworkObserver homeworkObserver: observers)
-        homeworkObserver.update(this);
+        for(HomeworkObserver homeworkObserver: observers) {
+            homeworkObserver.update(this);
+        }
     }
 
 
